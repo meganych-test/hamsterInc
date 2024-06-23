@@ -1,37 +1,34 @@
-window.onload = function() {
-    // Initialize the mobile check
-    if (isMobile()) {
-        // Hide the non-mobile message
-        document.getElementById('no-mobile-message').style.display = 'none';
-
-        // Log activity on mouse movement
-        window.onmousemove = logActivity;
-
-        // Initialize Telegram WebApp
-        const tg = window.Telegram.WebApp;
-        tg.expand();
-
-        // Set the initial language if available
-        if (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) {
-            document.documentElement.lang = tg.initDataUnsafe.user.language_code;
-
-            // Display user information
-            const userInfo = `Language: ${tg.initDataUnsafe.user.language_code}`;
-            const userInfoElement = document.getElementById('user-info');
-            if (userInfoElement) {
-                userInfoElement.textContent = userInfo;
-            }
-        }
-    } else {
-        // Show the non-mobile message
-        document.getElementById('no-mobile-message').style.display = 'block';
-    }
-};
-
-function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-function logActivity() {
-    console.log('Activity logged');
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://github.com/meganych-test/hamsterInc/blob/main/Firefly%20Cute%20Fat%20Tiny%20hamster%20character,%20cartoonish,%20finger%20tapping%20phone%20app,%20dress%20as%20coal%20miner%20w%20(8).jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+}
+.no-mobile-message {
+    display: none;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: absolute;
+}
+.user-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
 }
