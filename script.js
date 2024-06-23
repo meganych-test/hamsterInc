@@ -13,4 +13,29 @@
                 tg.setHeaderColor('#000000');
                 // Additional initialization code can go here
             }
+                // Prevent right-click context menu
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Prevent selection
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+// Prevent copy
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+});
+
+// Additional script to prevent view source using key combinations
+document.addEventListener('keydown', function(e) {
+    // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (e.keyCode == 123 || 
+        (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) || 
+        (e.ctrlKey && e.keyCode == 85)) {
+        e.preventDefault();
+    }
+});
+
         };
