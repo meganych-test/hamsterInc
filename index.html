@@ -4,65 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fill Page with Image</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://github.com/meganych-test/hamsterInc/blob/main/Firefly%20Cute%20Fat%20Tiny%20hamster%20character,%20cartoonish,%20finger%20tapping%20phone%20app,%20dress%20as%20coal%20miner%20w%20(8).jpg?raw=true');
-            background-size: cover;
-            background-position: center;
-        }
-        #desktop-message {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 75%;
-            max-width: 600px;
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 14px;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
-            z-index: 1000;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        window.onload = function() {
-            if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-                document.getElementById('desktop-message').style.display = 'block';
-                document.querySelector('.bg').style.display = 'none';
-            } else {
-                const tg = window.Telegram.WebApp;
-                
-                // Expand the Web App to full height
-                tg.expand();
-                // Set the background color to black
-                tg.setBackgroundColor('#000000');
-                // Set the header color (you might want to adjust this)
-                tg.setHeaderColor('#000000');
-                // Additional initialization code can go here
-            }
-        };
-    </script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div class="bg"></div>
     <div id="desktop-message">
-       Squeak! No desktop allowed! My tiny paws decree: phone or tablet, or I'll stuff this webpage in my cheek pouch. Your choice, boss!
+        This page is only accessible on mobile devices.
     </div>
 </body>
 </html>
