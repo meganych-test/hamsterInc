@@ -1,6 +1,9 @@
 window.onload = function() {
     // Initialize the mobile check
     if (isMobile()) {
+        // Hide the non-mobile message
+        document.getElementById('no-mobile-message').style.display = 'none';
+
         // Log activity on mouse movement
         window.onmousemove = logActivity;
 
@@ -20,8 +23,8 @@ window.onload = function() {
             }
         }
     } else {
-        // Display a message for non-mobile users
-        document.body.innerHTML = '<h1>This app is only available on mobile devices.</h1>';
+        // Show the non-mobile message
+        document.getElementById('no-mobile-message').style.display = 'block';
     }
 };
 
