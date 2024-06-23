@@ -1,8 +1,16 @@
 window.onload = function() {
+    const desktopMessage = document.getElementById('desktop-message');
+    const bgElement = document.querySelector('.bg');
+    
     if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
-        document.getElementById('desktop-message').style.display = 'block';
-        document.querySelector('.bg').style.display = 'none';
+        // Desktop device
+        desktopMessage.style.display = 'flex';
+        bgElement.style.display = 'none';
     } else {
+        // Mobile device
+        desktopMessage.style.display = 'none';
+        bgElement.style.display = 'block';
+        
         const tg = window.Telegram.WebApp;
         
         // Expand the Web App to full height
