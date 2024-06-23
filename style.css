@@ -25,11 +25,7 @@ html, body {
     color: white;
     padding: 20px;
     border-radius: 10px;
-    position: absolute;
-}
-.no-mobile-message .hamster-image {
-    max-width: 100px;
-    margin-bottom: 20px;
+    width: 75%;
 }
 .user-info {
     position: absolute;
