@@ -1,37 +1,16 @@
 window.onload = function() {
-    // Initialize the mobile check
-    if (isMobile()) {
-        // Hide the non-mobile message
-        document.getElementById('no-mobile-message').style.display = 'none';
-
-        // Log activity on mouse movement
-        window.onmousemove = logActivity;
-
-        // Initialize Telegram WebApp
-        const tg = window.Telegram.WebApp;
-        tg.expand();
-
-        // Set the initial language if available
-        if (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) {
-            document.documentElement.lang = tg.initDataUnsafe.user.language_code;
-
-            // Display user information
-            const userInfo = `Language: ${tg.initDataUnsafe.user.language_code}`;
-            const userInfoElement = document.getElementById('user-info');
-            if (userInfoElement) {
-                userInfoElement.textContent = userInfo;
-            }
-        }
+    if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))) {
+        document.getElementById('desktop-message').style.display = 'block';
+        document.querySelector('.bg').style.display = 'none';
     } else {
-        // Show the non-mobile message
-        document.getElementById('no-mobile-message').style.display = 'none';
+        const tg = window.Telegram.WebApp;
+        
+        // Expand the Web App to full height
+        tg.expand();
+        // Set the background color to black
+        tg.setBackgroundColor('#000000');
+        // Set the header color (you might want to adjust this)
+        tg.setHeaderColor('#000000');
+        // Additional initialization code can go here
     }
 };
-
-function isMobile() {
-    return /Mobi|Android/i.test(navigator.userAgent);
-}
-
-function logActivity() {
-    console.log('Activity logged');
-}
