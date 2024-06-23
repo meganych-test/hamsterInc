@@ -4,6 +4,13 @@
             padding: 0;
             overflow: hidden;
         }
+body {
+    -webkit-user-select: none; /* Disable selection in Safari */
+    -moz-user-select: none;    /* Disable selection in Firefox */
+    -ms-user-select: none;     /* Disable selection in Internet Explorer/Edge */
+    user-select: none;         /* Disable selection in standard-compliant browsers */
+}
+
         .bg {
             position: absolute;
             top: 0;
