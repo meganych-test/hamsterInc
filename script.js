@@ -1,11 +1,6 @@
 window.onload = function() {
     // Initialize the mobile check
     if (isMobile()) {
-        // Redirect to main.html after 5 seconds for mobile users
-        setTimeout(function() {
-            window.location.href = 'main.html';
-        }, 5000);
-
         // Log activity on mouse movement
         window.onmousemove = logActivity;
 
