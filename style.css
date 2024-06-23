@@ -3,10 +3,6 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000;
 }
 .bg {
     position: absolute;
@@ -19,17 +15,15 @@ html, body {
     background-position: center;
 }
 .no-mobile-message {
-    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
     padding: 20px;
     border-radius: 10px;
-    position: absolute;
-}
-.no-mobile-message .hamster-image {
-    max-width: 100px;
-    margin-bottom: 20px;
 }
 .user-info {
     position: absolute;
