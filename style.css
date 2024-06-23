@@ -6,6 +6,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #000;
 }
 .bg {
     position: absolute;
@@ -25,6 +26,10 @@ html, body {
     padding: 20px;
     border-radius: 10px;
     position: absolute;
+}
+.no-mobile-message .hamster-image {
+    max-width: 100px;
+    margin-bottom: 20px;
 }
 .user-info {
     position: absolute;
