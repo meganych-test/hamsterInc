@@ -4,81 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fill Page with Image</title>
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-        .bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://github.com/meganych-test/hamsterInc/blob/main/Firefly%20Cute%20Fat%20Tiny%20hamster%20character,%20cartoonish,%20finger%20tapping%20phone%20app,%20dress%20as%20coal%20miner%20w%20(8).jpg?raw=true');
-            background-size: cover;
-            background-position: center;
-        }
-        .no-mobile-message {
-            display: none;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script>
-        window.onload = function() {
-            // Initialize the mobile check
-            if (isMobile()) {
-                // Redirect to main.html after 5 seconds for mobile users
-                setTimeout(function() {
-                    window.location.href = 'main.html';
-                }, 5000);
-
-                // Log activity on mouse movement
-                window.onmousemove = logActivity;
-
-                // Initialize Telegram WebApp
-                const tg = window.Telegram.WebApp;
-                tg.expand();
-
-                // Set the initial language if available
-                if (tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.language_code) {
-                    document.documentElement.lang = tg.initDataUnsafe.user.language_code;
-
-                    // Display user information
-                    const userInfo = `Language: ${tg.initDataUnsafe.user.language_code}`;
-                    const userInfoElement = document.getElementById('user-info');
-                    if (userInfoElement) {
-                        userInfoElement.textContent = userInfo;
-                    }
-                }
-            } else {
-                // Display a message for non-mobile users
-                document.body.innerHTML = '<h1>This app is only available on mobile devices.</h1>';
-            }
-        };
-
-        function isMobile() {
-            return /Mobi|Android/i.test(navigator.userAgent);
-        }
-
-        function logActivity() {
-            console.log('Activity logged');
-        }
-    </script>
+    <script defer src="script.js"></script>
 </head>
 <body>
     <div class="bg"></div>
-    <div id="user-info" style="position: absolute; bottom: 10px; left: 10px; color: white;"></div>
+    <div id="user-info" class="user-info"></div>
 </body>
 </html>
