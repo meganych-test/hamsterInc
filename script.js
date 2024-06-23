@@ -24,7 +24,7 @@ window.onload = function() {
         }
     } else {
         // Show the non-mobile message
-        document.getElementById('no-mobile-message').style.display = 'block';
+        document.getElementById('no-mobile-message').style.display = 'none';
     }
 };
 
