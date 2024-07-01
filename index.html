@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Ham-01</title>
+    <title>Unity Web Player | Ham-Vibro6</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,27 +20,9 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Ham-01</div>
+        <div id="unity-build-title">Ham-Vibro6</div>
       </div>
     </div>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
-    <script src="vibration.js"></script>
-<script>
-    window.onload = function() {
-        const tg = window.Telegram.WebApp;
-        
-        // Expand the Web App to full height
-        tg.expand();
-
-        // Set the background color to black
-        tg.setBackgroundColor('#000000');
-
-        // Set the header color (you might want to adjust this)
-        tg.setHeaderColor('#000000');
-
-        // Additional initialization code can go here
-    };
-</script>
     <script>
       var canvas = document.querySelector("#unity-canvas");
 
@@ -70,15 +52,15 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Tg-Entry.loader.js";
+      var loaderUrl = buildUrl + "/Inc-Vibration.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Tg-Entry.data.unityweb",
-        frameworkUrl: buildUrl + "/Tg-Entry.framework.js.unityweb",
-        codeUrl: buildUrl + "/Tg-Entry.wasm.unityweb",
+        dataUrl: buildUrl + "/Inc-Vibration.data.br",
+        frameworkUrl: buildUrl + "/Inc-Vibration.framework.js.br",
+        codeUrl: buildUrl + "/Inc-Vibration.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Ham-01",
+        productName: "Ham-Vibro6",
         productVersion: "1.0.2",
         showBanner: unityShowBanner,
       };
